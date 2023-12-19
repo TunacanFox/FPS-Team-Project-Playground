@@ -11,7 +11,6 @@ namespace FPS.Lee.WeaponDetail
 {
     public class Weapon : MonoBehaviour
     {
-
         public int damage;
         public float fireRate;
 
@@ -62,8 +61,6 @@ namespace FPS.Lee.WeaponDetail
         // Start is called before the first frame update
         void Start()
         {
-
-
             _photonView = GetComponent<PhotonView>();
             //magText.text = mag.ToString(); //아래로 대체되었지만, 인지하라고 주석처리
             //ammoText.text = ammo + "/" + magAmmo;
@@ -131,12 +128,21 @@ namespace FPS.Lee.WeaponDetail
             //UI
 
             //애니메이션
-            Camera clonedObject = GetComponentInParent<Camera>(); //Camera.main 제거
+            /**/
+            GameObject playerObject; //Player를 참조한다
+            playerObject = this.gameObject;
+
+            /*
+             * 카메라가 무기의 부모일때 넣어야 하는 내용
+            //Camera clonedObject = GetComponentInParent<Camera>(); //이제 WeaponSwap 스크립트가 붙는 곳이 Player고,
+                                                                    //무기를 생성해주는 곳이 Player의 자식이라 이거 주석처리
             string cloneAnimationFinder = weaponData.weaponNameFinder + "(Clone)";
-            Transform gunTransform = clonedObject.transform.Find(cloneAnimationFinder); //설마했는데 (Clone)빠졌다고 이름이 틀리니까 Find를 못하네 ㅋㅋㅋㅋㅋㅋ
-            //Transform gunTransform = clonedObject.transform.Find(weaponData.weaponNameFinder);
-            Debug.Log($"weaponData네임파인더: {weaponData.weaponNameFinder}");
-            weaponAnimation = gunTransform.GetComponent<Animation>(); //총기 애니메이션 없으면 에러난다.
+            Transform weaponTransform = clonedObject.transform.Find(cloneAnimationFinder); //설마했는데 (Clone)빠졌다고 이름이 틀리니까 Find를 못하네 ㅋㅋㅋㅋㅋㅋ
+            Debug.Log($"weaponData네임파인더: {weaponData.weaponNameFinder}, cloneAnimationFindr: {cloneAnimationFinder}");
+            */
+
+            weaponAnimation = playerObject.GetComponent<Animation>(); //총기 애니메이션 없으면 에러난다. 
+                                                                      //찾은 오브젝트에서 Animation을 봅아서 weaponAnimation에 넣어준다.
 
 
             if(weaponAnimation == null)
@@ -178,7 +184,14 @@ namespace FPS.Lee.WeaponDetail
             recovering = false;
 
             Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward); //오류: UnassignedReferenceException: The variable camera of Weapon has not been assigned.
-                                                                                    //You probably need to assign the camera variable of the Weapon script in the inspector.
+                                                                                            //You probably need to assign the camera variable of the Weapon script in the inspector.
+            //흠... 시발 메인 카메라에서 나오면 안되잖아..?
+            //테스트로 메인 카메라에 넣긴 했는데 Bullethole인가 뭔가가 안나왔다.
+            /*
+             *  NullReferenceException: Object reference not set to an instance of an object
+                FPS.Lee.WeaponDetail.Weapon.Fire () (at Assets/02. Scripts/Lee/Weapon.cs:186)
+                FPS.Lee.WeaponDetail.Weapon.Update () (at Assets/02. Scripts/Lee/Weapon.cs:92)
+             */
             RaycastHit hit;
             int playermask = 1 << gameObject.layer;
 

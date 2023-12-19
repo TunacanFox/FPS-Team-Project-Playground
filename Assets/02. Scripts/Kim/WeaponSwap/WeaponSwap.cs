@@ -1,21 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FPS.WeaponHandler; //using 네임스페이스 WeaponFactory를 사용하기 위함
+using FPS.WeaponHandler;
+using FPS.Lee.WeaponDetail; //using 네임스페이스 WeaponFactory를 사용하기 위함
 
 namespace FPS.WeaponSwap
 {
     public class WeaponSwap : MonoBehaviour
     {
         private List<string> weaponList = new List<string>(); //총기 이름만 가지고 검색 때려서 총기 가져올 거다
-        [SerializeField] private GameObject currentWeapon; // 현재 활성화된 총기
+        [SerializeField] private Weapon currentWeapon; // 현재 활성화된 총기
 
-        public GameObject positionSettingPrefab; //투명 상태로 Vector3와 Rotation의 기준이 되는 총기 오브젝트. 하이어라키에서 positionSettingPrefab이름을 가진 오브젝트를 추가해야 한다.
+        public GameObject positionSettingObject; //투명 상태로 Vector3와 Rotation의 기준이 되는 총기 오브젝트. 하이어라키에서 positionSettingPrefab이름을 가진 오브젝트를 추가해야 한다.
         //위 오브젝트의 Vector3와 각도 받아서 새로운 총기를 만든다.
         public Vector3 currentVector;
         public Quaternion currentQuaternion;
 
-        public WeaponFactory weaponFactory; //총기 생성을 위해 클래스를 직접 참조헌다.
+        //public WeaponFactory weaponFactory; //총기 생성을 위해 클래스를 직접 참조하게 만들었다.
+                                            //Start부분에 FindObjectType으로 초기화하게 했음. 만약 작동 안할 경우 에디터 상에서 참조하기.
+        
 
         private void Start()
         {
@@ -27,11 +30,14 @@ namespace FPS.WeaponSwap
             weaponList.Add("(EX) RPG7");
             weaponList.Add("(SP) FlashGrenade");
 
+            /*
+            weaponFactory = FindObjectOfType<WeaponFactory>(); //WeaponFactory 스크립트가 적용된 오브젝트를 씬에서 찾아서 참조
 
             if (weaponFactory == null || weaponList == null)
             {
                 Debug.LogError("WeaponFactory or weaponList is not assigned in WeaponSwap");
             }
+            */
         }
 
         void Update()
@@ -59,7 +65,7 @@ namespace FPS.WeaponSwap
 
             //Debug.Log($"weaponList: {weaponList[index]}, index: {index}"); //생성할 총기의 이름과 인덱스를 출력해본다.
 
-            currentWeapon = weaponFactory.CreateWeapon(weaponList[index]); //총기 생성
+            currentWeapon = WeaponFactory.CreateWeapon(weaponList[index]); //총기 생성
         }
 
     }

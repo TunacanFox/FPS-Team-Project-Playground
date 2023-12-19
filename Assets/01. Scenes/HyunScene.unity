@@ -3231,8 +3231,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Weight: 1
-  m_Effectors: []
 --- !u!1 &716969969694189898
 GameObject:
   m_ObjectHideFlags: 0
@@ -3773,18 +3771,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeda7bfbf984f2a4da5ab4b8967b115d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Weight: 1
-  m_Data:
-    m_Root: {fileID: 1647285386828926029}
-    m_Mid: {fileID: 4625612814676350206}
-    m_Tip: {fileID: 3732314771859725160}
-    m_Target: {fileID: 523491879148257121}
-    m_Hint: {fileID: 6322874932268104554}
-    m_TargetPositionWeight: 1
-    m_TargetRotationWeight: 1
-    m_HintWeight: 1
-    m_MaintainTargetPositionOffset: 0
-    m_MaintainTargetRotationOffset: 0
 --- !u!1 &1374498736064827856
 GameObject:
   m_ObjectHideFlags: 0
@@ -4179,18 +4165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeda7bfbf984f2a4da5ab4b8967b115d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Weight: 1
-  m_Data:
-    m_Root: {fileID: 4695851931805507242}
-    m_Mid: {fileID: 7794202299607269210}
-    m_Tip: {fileID: 1774998821266245870}
-    m_Target: {fileID: 2983494980951312769}
-    m_Hint: {fileID: 1116527250774489268}
-    m_TargetPositionWeight: 1
-    m_TargetRotationWeight: 1
-    m_HintWeight: 1
-    m_MaintainTargetPositionOffset: 0
-    m_MaintainTargetRotationOffset: 0
 --- !u!1 &2444511861662137616
 GameObject:
   m_ObjectHideFlags: 0
@@ -5507,18 +5481,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RigLayers:
-  - m_Rig: {fileID: 592224194832677387}
-    m_Active: 1
-  m_Effectors:
-  - m_Transform: {fileID: 1116527250774489268}
-    m_Style:
-      shape: {fileID: 4300000, guid: e050c2b16fe384bd994474655a4b4968, type: 2}
-      color: {r: 0.22605905, g: 0.9433962, b: 0.28740078, a: 0.5}
-      size: 0.1
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0}
-    m_Visible: 1
 --- !u!1 &6632521758473020949
 GameObject:
   m_ObjectHideFlags: 0
@@ -5884,81 +5846,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boneShape: 1
-  drawBones: 1
-  drawTripods: 0
-  boneSize: 1
-  tripodSize: 1
-  boneColor: {r: 0.754717, g: 0.12388747, b: 0.18357189, a: 0.5}
-  m_Transforms:
-  - {fileID: 6879893874350928128}
-  - {fileID: 4468027638280975054}
-  - {fileID: 4304472459088432498}
-  - {fileID: 3434943580139443095}
-  - {fileID: 3797807016427490687}
-  - {fileID: 8483184268667336529}
-  - {fileID: 5687250085930606431}
-  - {fileID: 1589375648887661067}
-  - {fileID: 5465880273768301852}
-  - {fileID: 4871349905573473211}
-  - {fileID: 1822173289902163891}
-  - {fileID: 6302209252008397434}
-  - {fileID: 3103172077304313557}
-  - {fileID: 1647285386828926029}
-  - {fileID: 4625612814676350206}
-  - {fileID: 3732314771859725160}
-  - {fileID: 8741071322064718005}
-  - {fileID: 3211957812582260306}
-  - {fileID: 8910674015101169966}
-  - {fileID: 2451136235761682957}
-  - {fileID: 5562768879524736786}
-  - {fileID: 463169149351787530}
-  - {fileID: 5903931232579085822}
-  - {fileID: 7940462545908134777}
-  - {fileID: 9113055202193914410}
-  - {fileID: 1108663515748164594}
-  - {fileID: 1327530429830619361}
-  - {fileID: 6308227748484375559}
-  - {fileID: 3274215562650188192}
-  - {fileID: 5975171818553359825}
-  - {fileID: 5718582744124040179}
-  - {fileID: 6781584119579695505}
-  - {fileID: 4204983647388391833}
-  - {fileID: 8941430411310874070}
-  - {fileID: 2218855084468619962}
-  - {fileID: 4437552045807341896}
-  - {fileID: 4357389839725232902}
-  - {fileID: 4695851931805507242}
-  - {fileID: 7794202299607269210}
-  - {fileID: 1774998821266245870}
-  - {fileID: 8127519340840340854}
-  - {fileID: 5443276904889933362}
-  - {fileID: 1613837274619015562}
-  - {fileID: 2576336160927803148}
-  - {fileID: 6229258617050442169}
-  - {fileID: 9150547404009599279}
-  - {fileID: 4267822693803577768}
-  - {fileID: 9116092890940972943}
-  - {fileID: 2481894526722798973}
-  - {fileID: 1378720303049317250}
-  - {fileID: 8047319772210894471}
-  - {fileID: 1903446809322399076}
-  - {fileID: 3562552523172007188}
-  - {fileID: 517647782806851519}
-  - {fileID: 7705621746983956603}
-  - {fileID: 6214329393410034677}
-  - {fileID: 5224669202841834436}
-  - {fileID: 2888123199344806403}
-  - {fileID: 6157383446081991144}
-  - {fileID: 1268444245452357745}
-  - {fileID: 4917298037260664833}
-  - {fileID: 8180983225314972375}
-  - {fileID: 3685876370422657751}
-  - {fileID: 8149309430664177207}
-  - {fileID: 784426365966195429}
-  - {fileID: 1162752186853201774}
-  - {fileID: 946571228182567008}
-  - {fileID: 7284521021373934101}
 --- !u!1 &8412631400994481792
 GameObject:
   m_ObjectHideFlags: 0
@@ -6170,7 +6057,7 @@ MonoBehaviour:
   _rad: 1.5
   PickableMask:
     serializedVersion: 2
-    m_Bits: 16384
+    m_Bits: 0
   PickedPos: {fileID: 1774998821266245870}
 --- !u!4 &9025814369122557364
 Transform:

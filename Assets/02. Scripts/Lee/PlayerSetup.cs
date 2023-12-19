@@ -11,6 +11,8 @@ public class PlayerSetup : MonoBehaviour
 
     public TextMeshPro nickNameText;
     private PhotonView _photonView;
+    public Dictionary<string, object> customData = new Dictionary<string, object>();
+
 
     private void Awake()
     {
