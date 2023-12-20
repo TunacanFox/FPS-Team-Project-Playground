@@ -32,7 +32,7 @@ namespace FPS.Lee.WeaponDetail
         public TextMeshProUGUI ammoText;
 
         [Header("Animation")]
-        public Animation weaponAnimation; //<-- 이놈 쉬키 뭐임??
+        public Animation weaponAnimation; //<-- Animation 컴포넌트 필요, 그곳의 Element가 있어야 무기(Clone)을 여기에 넣는게 가능함
         public AnimationClip reloadAnimation;
 
         [Header("Recoil Settings")]
@@ -117,7 +117,7 @@ namespace FPS.Lee.WeaponDetail
             //인데... 태그가 MainCamera인 첫 번째 활성 카메라를 찾아서 모든 플레이어가 같이 움직이는 문제가 발생한다.
 
             //Ammo
-            mag = weaponData.magazineSize; //초기화
+            mag = weaponData.magazineNum; //초기화
             ammo = weaponData.ammo; //초기화
             fullMagazine = weaponData.fullMagazine; //초기화
 
@@ -128,7 +128,6 @@ namespace FPS.Lee.WeaponDetail
             //UI
 
             //애니메이션
-            /**/
             GameObject playerObject; //Player를 참조한다
             playerObject = this.gameObject;
 
@@ -141,9 +140,12 @@ namespace FPS.Lee.WeaponDetail
             Debug.Log($"weaponData네임파인더: {weaponData.weaponNameFinder}, cloneAnimationFindr: {cloneAnimationFinder}");
             */
 
-            weaponAnimation = playerObject.GetComponent<Animation>(); //총기 애니메이션 없으면 에러난다. 
-                                                                      //찾은 오브젝트에서 Animation을 봅아서 weaponAnimation에 넣어준다.
-
+            weaponAnimation = playerObject.GetComponent<Animation>(); //총기 애니메이션 없으면 에러난다.
+                                                                      //찾은 오브젝트에서 Animation 컴포넌트를 찾고,
+                                                                      //그곳의 Animations의 Element에서 뽑아서 weaponAnimation에 넣어준다.
+            //총기 애니메이션을 일일이 넣지 않기 위해서 애니메이션 클립 추가
+            //AnimationClip clipAdderW
+            //weaponAnimation
 
             if(weaponAnimation == null)
             {
@@ -187,6 +189,7 @@ namespace FPS.Lee.WeaponDetail
                                                                                             //You probably need to assign the camera variable of the Weapon script in the inspector.
             //흠... 시발 메인 카메라에서 나오면 안되잖아..?
             //테스트로 메인 카메라에 넣긴 했는데 Bullethole인가 뭔가가 안나왔다.
+            //Bullethole은 Lee의 EffectSpawner에서 담당한다.
             /*
              *  NullReferenceException: Object reference not set to an instance of an object
                 FPS.Lee.WeaponDetail.Weapon.Fire () (at Assets/02. Scripts/Lee/Weapon.cs:186)

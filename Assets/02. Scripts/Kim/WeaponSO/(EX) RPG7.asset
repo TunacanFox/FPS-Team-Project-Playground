@@ -14,9 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponType: 3
   weaponName: (EX) RPG7
-  damage: 0
+  weaponNameFinder: RPG7
+  damage: 90
+  fireRate: 1
   range: 0
-  fireRate: 0
-  magazineSize: 1
-  totalMagazine: 2
-  weaponPrefab: {fileID: 1411512464560164, guid: 02baef62b1bfedf40bb369fb7542b9e7, type: 3}
+  ammo: 1
+  fullMagazine: 1
+  magazineNum: 3
+  weaponPrefab: {fileID: 1411512464560164, guid: 02baef62b1bfedf40bb369fb7542b9e7,
+    type: 3}
+  hitVFX: {fileID: 0}
+  removeFireHole: 0
+  reloadAnimation: {fileID: 7400000, guid: 3a86f4f90fc1c65428acad670b8f53bd, type: 2}
+  recoverPercent: 0.7
+  recoilUp: 0.25
+  recoilBack: 0.25
+  recovering: 0

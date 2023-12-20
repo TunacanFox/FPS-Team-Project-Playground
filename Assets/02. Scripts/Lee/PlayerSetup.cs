@@ -23,6 +23,12 @@ public class PlayerSetup : MonoBehaviour
     private void OnDestroy()
     {
         spawned.Remove(_photonView.Owner.UserId);
+        /*
+        ArgumentNullException: Value cannot be null.
+        Parameter name: key
+        System.Collections.Generic.Dictionary`2[TKey,TValue].Remove (TKey key) (at <b89873cb176e44a995a4781c7487d410>:0)
+        PlayerSetup.OnDestroy () (at Assets/02. Scripts/Lee/PlayerSetup.cs:25)
+         */
     }
 
     [PunRPC]

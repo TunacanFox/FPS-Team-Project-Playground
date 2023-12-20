@@ -21,9 +21,13 @@ namespace FPS.WeaponHandler
                 if (weaponPoint.childCount > 0)
                     GameObject.Destroy(weaponPoint.GetChild(0).gameObject);
 
-                Weapon weapon = GameObject.Instantiate(weaponData.weaponPrefab, weaponPoint).AddComponent<Weapon>();
-                weapon.AddComponent<WeaponStat>();
-                weapon.WeaponUISetup(weaponData);
+                Weapon weapon = GameObject.Instantiate(weaponData.weaponPrefab, weaponPoint).AddComponent<Weapon>(); //이건 되는거 까진 좋은데,
+                                                                                                                     //AddComponent<Weapon>이 안된다. 싱글로 하면 붙여진다
+
+                weapon.AddComponent<WeaponStat>(); //이건 되고
+                weapon.AddComponent<Animation>(); //Weapon의 변수 중 Animation weaponAnimation을 넣어주기 위해 추가.
+                                                  //Animation의 Element에 총기에 맞는 애니메이션들 넣어주면 된다. (현재는 Reload Animation)
+                weapon.WeaponUISetup(weaponData); //Weapon 스크립트의 
                 return weapon;
             }
 

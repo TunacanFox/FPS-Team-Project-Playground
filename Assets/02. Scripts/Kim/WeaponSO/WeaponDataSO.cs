@@ -40,8 +40,8 @@ namespace FPS.WeaponSO
 
         [Header("Ammo")]
         public int ammo; //ÃÑ¿¡ µé¾î°¡´Â ÃÑ¾Ë °³¼ö
-        public int magazineSize; //ÅºÃ¢ °³¼ö
         public int fullMagazine; //ÁÖ¾îÁö´Â ÃÑ ÅºÃ¢ Å©±â
+        public int magazineNum; //ÅºÃ¢ °³¼ö
 
         [Header("Prefab")]
         public GameObject weaponPrefab;

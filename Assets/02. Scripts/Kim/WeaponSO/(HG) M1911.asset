@@ -14,9 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponType: 1
   weaponName: (HG) M1911
-  damage: 0
-  range: 50
-  fireRate: 1
-  magazineSize: 8
-  totalMagazine: 64
-  weaponPrefab: {fileID: 1694449805434718, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+  weaponNameFinder: M1011
+  damage: 27
+  fireRate: 4
+  range: 0
+  ammo: 7
+  fullMagazine: 7
+  magazineNum: 3
+  weaponPrefab: {fileID: 1694449805434718, guid: 6f1a7354265853f44b0ed5e2e43676ad,
+    type: 3}
+  hitVFX: {fileID: 6461938295811229668, guid: f8ba958850baee44eb5ad0dfa1b5dbe0, type: 3}
+  removeFireHole: 1
+  reloadAnimation: {fileID: 7400000, guid: 6160b6577e297fb48be6342fc6bc6df5, type: 2}
+  recoverPercent: 0.7
+  recoilUp: 0.05
+  recoilBack: 0.05
+  recovering: 0
