@@ -11,6 +11,8 @@ namespace FPS.Lee.WeaponDetail
 {
     public class Weapon : MonoBehaviour
     {
+        //test
+
         public int damage;
         public float fireRate;
 
