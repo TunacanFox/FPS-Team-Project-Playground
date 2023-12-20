@@ -61,6 +61,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
         Debug.Log("We're connecte and in a room now");
     }
+
     public override void OnJoinedRoom() //Client가 다른방에 조인했을때 방장 X 
     {
         base.OnJoinedRoom();
@@ -70,7 +71,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
         SpawnPlayer();
     }
-    public void SpawnPlayer()
+
+    public void SpawnPlayer() //플레이어 들어오면 플레이어 캐릭터 Instantiate 해주는 메서드
     {
         GameObject _player = PhotonNetwork.Instantiate(player.name,
                                    spawnPoint.position,

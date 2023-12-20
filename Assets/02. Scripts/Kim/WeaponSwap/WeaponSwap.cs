@@ -11,8 +11,7 @@ namespace FPS.WeaponSwap
         private List<string> weaponList = new List<string>(); //총기 이름만 가지고 검색 때려서 총기 가져올 거다
         [SerializeField] private Weapon currentWeapon; // 현재 활성화된 총기
 
-        public GameObject positionSettingObject; //투명 상태로 Vector3와 Rotation의 기준이 되는 총기 오브젝트. 하이어라키에서 positionSettingPrefab이름을 가진 오브젝트를 추가해야 한다.
-        //위 오브젝트의 Vector3와 각도 받아서 새로운 총기를 만든다.
+        public GameObject weaponPoint; //해당 오브젝트의 Vector3와 각도 받아서 새로운 총기를 만든다.
         public Vector3 currentVector;
         public Quaternion currentQuaternion;
 
@@ -29,6 +28,11 @@ namespace FPS.WeaponSwap
             weaponList.Add("(SG) Bennelli_M4");
             weaponList.Add("(EX) RPG7");
             weaponList.Add("(SP) FlashGrenade");
+            weaponList.Add("(MG) M249");
+            weaponList.Add("(SMG) Uzi");
+            //weaponList에 Add될 때마다 숫자 키 패드에 하나씩 무기가 들어가고, 불러올 수 있다.
+
+            weaponPoint = GameObject.Find("WeaponPoint");
 
             /*
             weaponFactory = FindObjectOfType<WeaponFactory>(); //WeaponFactory 스크립트가 적용된 오브젝트를 씬에서 찾아서 참조

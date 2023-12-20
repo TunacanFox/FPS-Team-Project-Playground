@@ -17,10 +17,10 @@ MonoBehaviour:
   weaponNameFinder: AK74
   damage: 25
   fireRate: 10
-  range: 0
+  range: 650
   ammo: 40
-  magazineNum: 6
   fullMagazine: 40
+  magazineNum: 6
   weaponPrefab: {fileID: 1487774384131766, guid: ee329c3cd08e58645834d20702d7f6c6,
     type: 3}
   hitVFX: {fileID: 6461938295811229668, guid: 94c077a798bd0fc43a47cb78d7e49314, type: 3}

@@ -27,6 +27,6 @@ MonoBehaviour:
   removeFireHole: 1
   reloadAnimation: {fileID: 7400000, guid: 876eea60468be3149949b3a1e9481fc4, type: 2}
   recoverPercent: 0.7
-  recoilUp: 0.05
+  recoilUp: 0.15
   recoilBack: 0.05
   recovering: 0

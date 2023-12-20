@@ -39,8 +39,8 @@ namespace FPS.WeaponSO
         public float range; //사거리
 
         [Header("Ammo")]
-        public int ammo; //총에 들어가는 총알 개수
-        public int fullMagazine; //주어지는 총 탄창 크기
+        public int ammo; //쏠 수 있는 총알 개수
+        public int fullMagazine; //총에 들어가는 최대 총알 개수
         public int magazineNum; //탄창 개수
 
         [Header("Prefab")]
