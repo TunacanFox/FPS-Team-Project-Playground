@@ -4181,7 +4181,7 @@ GameObject:
   - component: {fileID: 1133969742237405485}
   - component: {fileID: 4061448177838858156}
   m_Layer: 0
-  m_Name: PositionSettingPrefab
+  m_Name: WeaponSettingPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
