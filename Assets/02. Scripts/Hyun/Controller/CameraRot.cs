@@ -9,6 +9,7 @@ namespace FPSProto.Controller
         [SerializeField] private float mouseSpeed = 4f;
         
         public Transform player; // 플레이어 Transform을 인스펙터에서 할당
+                                 // -> 이거를 나중에 포톤 네트워크에서 만들어준 플레이어로 자동으로 초기화하게 하면 될거 같다
         private Vector3 offset; // 플레이어와 카메라 사이의 거리 및 방향
         private float mouseX = 0f;
 
