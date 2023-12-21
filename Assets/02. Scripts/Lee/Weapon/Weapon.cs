@@ -165,6 +165,8 @@ namespace FPS.Lee.WeaponDetail
             recoilUp = weaponData.recoilUp;
             recoilBack = weaponData.recoilBack;
             //recovering = weaponData.recovering; //에러 떠서 주석처리
+
+            //Animation에 재장전 애니메이션을 추가
         }
 
     void Reload()
@@ -187,7 +189,7 @@ namespace FPS.Lee.WeaponDetail
 
             Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward); //오류: UnassignedReferenceException: The variable camera of Weapon has not been assigned.
                                                                                             //You probably need to assign the camera variable of the Weapon script in the inspector.
-            //흠... 시발 메인 카메라에서 나오면 안되잖아..?
+            //흠... 메인 카메라에서 나오면 안되잖아..? -> 생성된 플레이어 쫓아가게 생성되면 초기화
             //테스트로 메인 카메라에 넣긴 했는데 Bullethole인가 뭔가가 안나왔다.
             //Bullethole은 Lee의 EffectSpawner에서 담당한다.
             /*
@@ -211,28 +213,6 @@ namespace FPS.Lee.WeaponDetail
             }
 
             return;
-
-
-
-            //Ray ray = new Ray(camera.transform.position, camera.transform.forward);
-            //
-            //RaycastHit hit;
-            //int playermask = 1 << gameObject.layer;
-            //
-            //
-            //if (Physics.Raycast( ray.origin, ray.direction, out hit, 100f,playermask))
-            //{
-            //    if(hit.transform.gameObject.GetComponent<Health>())
-            //    {
-            //        hit.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage",RpcTarget.All,damage);
-            //    }
-            //}
-            //else if(Physics.Raycast(ray.origin, ray.direction, out hit, 100f, ~playermask))
-            //{
-            //    GameObject hitInfo = PhotonNetwork.Instantiate(hitVFX.name, hit.point, Quaternion.LookRotation(hit.normal));
-            //    Destroy(hitInfo, 5f);
-            //    hitInfo.transform.position += hitInfo.transform.forward / 1000;
-            //}
 
         }
 

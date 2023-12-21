@@ -45,8 +45,6 @@ public class Health : MonoBehaviour
         }
     }
 
-
-
     [PunRPC]
     public void TakeDamage(int damgage)
     {
@@ -63,6 +61,3 @@ public class Health : MonoBehaviour
         }
     }
 }
-
-
-

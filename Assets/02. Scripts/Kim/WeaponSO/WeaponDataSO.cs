@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace FPS.WeaponSO
 {
-    public enum WeaponType
+    public enum WeaponSlot
     {
         MainArm, //1번 슬롯 무기 메인 무기
-        SideArm, //2번 슬롯 무기 권총 생각중
+        SubArm, //2번 슬롯 무기 권총 생각중
         Melee, //3번 슬롯 무기 근접 무기
         Explosive, //4번 슬롯 폭발물, 소이수류탄 등등
         SpecialWeapon, //5번 슬롯 특수무기: 투척무기 슈리켄, 고드름, 수리검 같은거
@@ -23,8 +23,8 @@ namespace FPS.WeaponSO
         /// 쓸거면 쓰고 아니면 말고
         /// </summary>
 
-
-        public WeaponType weaponType;
+        [Header("WeaponSlot")]
+        public WeaponSlot weaponSlot;
 
         [Header("WeaponName")]
         public string weaponName; //스크립터블 오브젝트를 부르기 위한 이름
@@ -53,7 +53,7 @@ namespace FPS.WeaponSO
         [Header("Animation")]
         //public Animation animationForWeapon; //ak74 프리팹의 경우 ak74를 넣었다. 해당 총기의 프리팹을 넣어야 하는 듯 하다.
         //그러니 Weapon.cs에서 Find이용해서 넣어주자
-        public AnimationClip reloadAnimation; //미리 만든 애니메이션 클립을 넣는다
+        public AnimationClip reloadAnimation; //미리 만든 애니메이션 클립을 넣는다.
 
         //반동
         [Header("Recoil Settings")]

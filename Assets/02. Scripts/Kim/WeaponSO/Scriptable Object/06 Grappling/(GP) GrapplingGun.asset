@@ -10,23 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5ecbe7d7e2ca1c49802ac65c31d5754, type: 3}
-  m_Name: (SMG) Uzi
+  m_Name: (GP) GrapplingGun
   m_EditorClassIdentifier: 
-  weaponType: 0
-  weaponName: (SMG) Uzi
-  weaponNameFinder: Uzi
-  damage: 17
-  fireRate: 20
-  range: 950
-  ammo: 30
-  fullMagazine: 30
-  magazineNum: 3
-  weaponPrefab: {fileID: 1095254202041702, guid: 6273e2936e9d6a24e9f64c7c70d6bd19,
-    type: 3}
+  weaponSlot: 5
+  weaponName: (GP) GrapplingGun
+  weaponNameFinder: GrapplingGun
+  damage: 10
+  fireRate: 0.1
+  range: 0
+  ammo: 1
+  fullMagazine: 1
+  magazineNum: 1
+  weaponPrefab: {fileID: 0}
   hitVFX: {fileID: 0}
   removeFireHole: 0
-  reloadAnimation: {fileID: 7400000, guid: f97acee29ea2a5d4e8c27930c5e081e0, type: 2}
+  reloadAnimation: {fileID: 0}
   recoverPercent: 0.7
-  recoilUp: 0.08
+  recoilUp: 0.05
   recoilBack: 0.05
   recovering: 0

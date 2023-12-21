@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5ecbe7d7e2ca1c49802ac65c31d5754, type: 3}
-  m_Name: (EX) RPG7
+  m_Name: (SMG) Uzi
   m_EditorClassIdentifier: 
-  weaponType: 3
-  weaponName: (EX) RPG7
-  weaponNameFinder: RPG7
-  damage: 90
-  fireRate: 1
-  range: 0
-  ammo: 1
-  fullMagazine: 1
+  weaponSlot: 0
+  weaponName: (SMG) Uzi
+  weaponNameFinder: Uzi
+  damage: 17
+  fireRate: 30
+  range: 1250
+  ammo: 25
+  fullMagazine: 25
   magazineNum: 3
-  weaponPrefab: {fileID: 1411512464560164, guid: 02baef62b1bfedf40bb369fb7542b9e7,
+  weaponPrefab: {fileID: 1095254202041702, guid: 6273e2936e9d6a24e9f64c7c70d6bd19,
     type: 3}
   hitVFX: {fileID: 0}
   removeFireHole: 0
-  reloadAnimation: {fileID: 7400000, guid: 3a86f4f90fc1c65428acad670b8f53bd, type: 2}
+  reloadAnimation: {fileID: 7400000, guid: f97acee29ea2a5d4e8c27930c5e081e0, type: 2}
   recoverPercent: 0.7
-  recoilUp: 0.25
-  recoilBack: 0.25
+  recoilUp: 0.08
+  recoilBack: 0.05
   recovering: 0

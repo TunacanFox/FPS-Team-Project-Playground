@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ecbe7d7e2ca1c49802ac65c31d5754, type: 3}
   m_Name: (HG) M1911
   m_EditorClassIdentifier: 
-  weaponType: 1
+  weaponSlot: 1
   weaponName: (HG) M1911
-  weaponNameFinder: M1011
+  weaponNameFinder: M1911
   damage: 27
   fireRate: 4
   range: 0

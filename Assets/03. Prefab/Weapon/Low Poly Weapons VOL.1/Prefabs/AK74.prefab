@@ -177,8 +177,6 @@ GameObject:
   - component: {fileID: 4519716788627816}
   - component: {fileID: 33705837635148522}
   - component: {fileID: 23860282398207496}
-  - component: {fileID: 5701709486336649479}
-  - component: {fileID: -4481368642622424589}
   m_Layer: 0
   m_Name: AK74
   m_TagString: Untagged
@@ -254,36 +252,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5701709486336649479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1487774384131766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7a7610228e98364b9b3f527b6ff9f6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swayClamp: 0.09
-  smoothing: 3
---- !u!111 &-4481368642622424589
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1487774384131766}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 7400000, guid: ff2fc65bec35bfe4e88db2a18e28847b, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &1927369336514790
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,11 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ecbe7d7e2ca1c49802ac65c31d5754, type: 3}
   m_Name: (SP) SmokeGrenade
   m_EditorClassIdentifier: 
-  weaponType: 4
+  weaponSlot: 4
   weaponName: (SP) SmokeGrenade
+  weaponNameFinder: SmokeGrenade
   damage: 0
-  range: 0
   fireRate: 0
-  magazineSize: 1
-  totalMagazine: 3
-  weaponPrefab: {fileID: 1062895056798360, guid: 8b4cba336c093ff41ae9321f9f8433d6, type: 3}
+  range: 0
+  ammo: 0
+  fullMagazine: 0
+  magazineNum: 0
+  weaponPrefab: {fileID: 1062895056798360, guid: 8b4cba336c093ff41ae9321f9f8433d6,
+    type: 3}
+  hitVFX: {fileID: 0}
+  removeFireHole: 0
+  reloadAnimation: {fileID: 0}
+  recoverPercent: 0
+  recoilUp: 0
+  recoilBack: 0
+  recovering: 0

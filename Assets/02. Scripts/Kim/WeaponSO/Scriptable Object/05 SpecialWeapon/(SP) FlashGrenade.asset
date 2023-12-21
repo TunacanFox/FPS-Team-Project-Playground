@@ -12,11 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ecbe7d7e2ca1c49802ac65c31d5754, type: 3}
   m_Name: (SP) FlashGrenade
   m_EditorClassIdentifier: 
-  weaponType: 4
+  weaponSlot: 4
   weaponName: (SP) FlashGrenade
+  weaponNameFinder: FlashGrenade
   damage: 0
-  range: 0
   fireRate: 0
-  magazineSize: 1
-  totalMagazine: 3
-  weaponPrefab: {fileID: 1516097666562846, guid: c0f110e4459b675489b7db1e686d5bc3, type: 3}
+  range: 0
+  ammo: 0
+  fullMagazine: 0
+  magazineNum: 0
+  weaponPrefab: {fileID: 1516097666562846, guid: c0f110e4459b675489b7db1e686d5bc3,
+    type: 3}
+  hitVFX: {fileID: 0}
+  removeFireHole: 0
+  reloadAnimation: {fileID: 0}
+  recoverPercent: 0
+  recoilUp: 0
+  recoilBack: 0
+  recovering: 0

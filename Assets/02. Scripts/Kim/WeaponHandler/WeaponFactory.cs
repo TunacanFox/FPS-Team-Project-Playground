@@ -17,13 +17,14 @@ namespace FPS.WeaponHandler
              if (PlayerSetup.spawned.TryGetValue(PhotonNetwork.LocalPlayer.UserId, out PlayerSetup player))
               {
                 //GameObject Test = GameObject.Find("Player");
-                //만약 테스트로 무기 Swap이 되는지 확인하고자 한다면
-                //0. Player라는 이름을 가진 오브젝트에 WeaponSwap 스크립트 추가해야함. (단, Player는 누군가의 자식이면 안된다)
-                //1. 위의 조건문 부분 주석처리하기
-                //2. Test가 있는 부분의 주석 풀기
-                //3. 아래의 weaponPoint 초기화 하는 부분에 player대신 Test를 넣는다.
-                //4. 확인하고 나서 원상복구 하기 (조립은 분해의 역순)
-
+                /*
+                  만약 테스트로 무기 Swap이 되는지 확인하고자 한다면
+                    0. Player라는 이름을 가진 오브젝트에 WeaponSwap 스크립트 추가해야함. (단, Player는 누군가의 자식이면 안된다)
+                    1. 위의 조건문 부분 주석처리하기
+                    2. Test가 있는 부분의 주석 풀기
+                    3. 아래의 weaponPoint 초기화 하는 부분에 player대신 Test를 넣는다.
+                    4. 확인하고 나서 원상복구 하기 (조립은 분해의 역순)
+                */
                 WeaponDataSO weaponData = WeaponSettingAssets.instance[weaponName]; //이 데이터로 weaponName에 해당하는 무기 가져온다
                 Transform weaponPoint = player.transform.Find("WeaponPoint");
 

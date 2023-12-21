@@ -1371,6 +1371,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7c0d9626098268e44876cb53b5c9f86c, type: 2}
   - {fileID: 11400000, guid: 60a266675e8db7f42b0679d1f47257d7, type: 2}
   - {fileID: 11400000, guid: 3e5da0788c0f75c4daa605b6538baa39, type: 2}
+  - {fileID: 11400000, guid: 471c23a7bd6f53641b5eb8b787517b5c, type: 2}
+  _weaponNames: []
 --- !u!4 &720219112
 Transform:
   m_ObjectHideFlags: 0
@@ -1922,7 +1924,7 @@ GameObject:
   - component: {fileID: 1002038928}
   - component: {fileID: 1002038927}
   m_Layer: 3
-  m_Name: Canvas
+  m_Name: Text Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3313,6 +3315,51 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!1 &1945195606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1945195608}
+  - component: {fileID: 1945195607}
+  m_Layer: 0
+  m_Name: MemorizeWeaponNames
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1945195607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945195606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb3a332655f2c747bae2f0f917587dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponNames: []
+--- !u!4 &1945195608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945195606}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1960156286
 GameObject:
   m_ObjectHideFlags: 0
@@ -5473,6 +5520,7 @@ GameObject:
   - component: {fileID: 2142695528602178304}
   - component: {fileID: 2433508074974641890}
   - component: {fileID: 8955659068037821107}
+  - component: {fileID: 8955659068037821108}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -6670,6 +6718,20 @@ MonoBehaviour:
   weaponPoint: {fileID: 0}
   currentVector: {x: 0, y: 0, z: 0}
   currentQuaternion: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8955659068037821108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4628018232892170718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5a99c3016122ca4a9a3029bb434d7b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  healthText: {fileID: 270410450}
 --- !u!4 &9025814369122557364
 Transform:
   m_ObjectHideFlags: 0
@@ -6770,6 +6832,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 720219112}
+  - {fileID: 1945195608}
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 92296653}
