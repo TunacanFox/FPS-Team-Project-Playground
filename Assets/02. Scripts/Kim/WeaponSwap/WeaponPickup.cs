@@ -1,7 +1,6 @@
 using UnityEngine;
-using FPS.WeaponSO;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using FPS.WeaponSO;
 
 //Todo
 //스크립터블 오브젝트에서 enum WeaoinSlot과 string weaponName을 받아서 저장하는 오브젝트. 그리고 어떻게 생겨먹었는지 알리기 위한 프리팹만 저장
@@ -28,14 +27,42 @@ namespace FPS.WeaponSO
         private void Start()
         {
             weaponNames = WeaponSettingAssets.instance.GetWeaponNames(); //스크립터블 오브젝트의 이름들 모두 저장. 알아야 소환하지
-
         }
 
-        public void ChangeWeapon(string weaponName)
+        public void ChangeWeapon(string weaponName, WeaponSlot weaponSlot)
         {
+            //바닥에 떨어진 무기의 WeaponSlot에 따라 플레이어의 무기를 교체할 슬롯(리스트)을 지정해준다.
+            switch(weaponSlot) 
+            {
+                case WeaponSlot.MainArm: //1번 슬롯, 0번 리스트
 
+                    break;
+
+                case WeaponSlot.SubArm: //2번 슬롯, 1번 리스트
+
+                    break;
+
+                case WeaponSlot.Melee: //3번 슬롯, 2번 리스트
+
+                    break;
+
+                case WeaponSlot.Explosive:
+
+                    break;
+
+                case WeaponSlot.SpecialWeapon:
+
+                    break;
+
+                case WeaponSlot.Grappling:
+
+                    break;
+
+
+            }
+            
+            
         }
-
 
 
 

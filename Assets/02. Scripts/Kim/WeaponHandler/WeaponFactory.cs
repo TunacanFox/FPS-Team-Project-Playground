@@ -14,9 +14,9 @@ namespace FPS.WeaponHandler
     {
         public static Weapon CreateWeapon(string weaponName) //이 메서드는 WeaponSwap.cs에서 호출된다.
         {
-             if (PlayerSetup.spawned.TryGetValue(PhotonNetwork.LocalPlayer.UserId, out PlayerSetup player))
+             //if (PlayerSetup.spawned.TryGetValue(PhotonNetwork.LocalPlayer.UserId, out PlayerSetup player))
               {
-                //GameObject Test = GameObject.Find("Player");
+                GameObject Test = GameObject.Find("Player");
                 /*
                   만약 테스트로 무기 Swap이 되는지 확인하고자 한다면
                     0. Player라는 이름을 가진 오브젝트에 WeaponSwap 스크립트 추가해야함. (단, Player는 누군가의 자식이면 안된다)
@@ -26,7 +26,7 @@ namespace FPS.WeaponHandler
                     4. 확인하고 나서 원상복구 하기 (조립은 분해의 역순)
                 */
                 WeaponDataSO weaponData = WeaponSettingAssets.instance[weaponName]; //이 데이터로 weaponName에 해당하는 무기 가져온다
-                Transform weaponPoint = player.transform.Find("WeaponPoint");
+                Transform weaponPoint = Test.transform.Find("WeaponPoint");
 
                 if (weaponPoint == null)
                     Debug.LogError("WeaponPoint is null. Please add Create Empty as 'Player' child and rename it 'WeaponPoint'.");
