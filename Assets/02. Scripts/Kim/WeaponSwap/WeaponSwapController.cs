@@ -6,15 +6,14 @@ using FPS.Lee.WeaponDetail; //using 네임스페이스 WeaponFactory를 사용하기 위함
 
 namespace FPS.WeaponSwap
 {
-    public class WeaponSwap : MonoBehaviour
+    public class WeaponSwapController : MonoBehaviour
     {
-        [SerializeField] private List<string> weaponNameList = new List<string>(); //총기 이름만 가지고 검색 때려서 총기 가져올 거다.
-                                                                                     //이게 1~6번 총기 인벤토리다.
+        [SerializeField] private List<string> weaponNameList = new List<string>(); //총기 이름만 저장 중
         
-        [SerializeField] private GameObject[] testArray = new GameObject[7]; //여기에 총기를 넣음 0번 주무기 1번 보조무기 등등
+        [SerializeField] private Weapon[] testArray = new Weapon[7]; //여기에 총기를 넣음 0번 주무기 1번 보조무기 등등. 1번~6번
 
 
-        [SerializeField] private Weapon currentWeapon; // 현재 활성화된 총기
+        [SerializeField] private Weapon previousWeapon; // 현재 활성화된 총기
 
         public GameObject weaponPoint; //해당 오브젝트의 Vector3와 각도 받아서 새로운 총기를 만든다.
         public Vector3 currentVector;
@@ -66,6 +65,7 @@ namespace FPS.WeaponSwap
                 }
             }
 
+            //if (Input.GetKeyCode("E"))
             /*
             // Sodo Code
             //if 버튼을 눌렀는데, 대상의 트리거/레이어가 ㅇㅇ이라면 WeaponPickup의 ChangeWeapon 메서드를 실행
@@ -80,18 +80,19 @@ namespace FPS.WeaponSwap
             if (index < 0 || index >= weaponNameList.Count) //인덱스 범위를 넘으면 그냥 반환 (실행 안됨)
                 return;
 
-            if (currentWeapon != null)
+            if (testArray[index] == null)
             {
-                GameObject.Destroy(currentWeapon.gameObject); //총기를 바꿨으니 기존의 총기를 제거, currentWeapon의 게임옵젝이라고 명시 필수
-                currentWeapon.gameObject.SetActive(false); //총기를 바꿨으니 해당 총기를 숨김 처리한다.
+                testArray[index] = WeaponFactory.CreateWeapon(weaponNameList[index]); //무기 생성
+                if(previousWeapon != null)
+                    previousWeapon.gameObject.SetActive(false);
             }
+            else if (testArray[index] != null)
+            {
+                previousWeapon.gameObject.SetActive(false);
+                testArray[index].gameObject.SetActive(true); //총기를 바꿨으니 해당 총기를 숨김 처리한다.
 
-
-            //수정해야하는 것
-            //if (weaponHolderList[index] == null) // if(해당 슬롯에 총기가 존재하지 않는다면) { 총기 생성   }
-            currentWeapon = WeaponFactory.CreateWeapon(weaponNameList[index]); //WeaponName으로 총기 생성
-            //else 해당하는 총기의 SetActive를 true로 해준다.
+            }
+            previousWeapon = testArray[index]; //WeaponName으로 총기 생성
         }
-
     } //class
 } //namespace

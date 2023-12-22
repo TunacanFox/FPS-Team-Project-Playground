@@ -13,15 +13,18 @@ namespace FPS.WeaponSO
         Grappling, //6번 슬롯: 로망인 그래플링 건!!
     }
 
+
     [CreateAssetMenu(fileName = "Weapon", menuName = "WeaponSO")]
     public class WeaponDataSO : ScriptableObject
     {
+        public int id;
         /// <summary>
         /// 사용 방법: 
         /// 타입에 따라 일치하는 함수를 호출하게 할 수 있다. ex) 그래플링 건 함수 불러오기, 샷건 점프 불러오기,
         /// 투척물, 그 중에 소이 수류탄이면 화염 지대 소환 등등등
         /// 쓸거면 쓰고 아니면 말고
         /// </summary>
+
 
         [Header("WeaponSlot")]
         public WeaponSlot weaponSlot;

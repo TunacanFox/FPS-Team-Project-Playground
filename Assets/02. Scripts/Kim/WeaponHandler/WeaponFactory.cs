@@ -32,9 +32,12 @@ namespace FPS.WeaponHandler
                     Debug.LogError("WeaponPoint is null. Please add Create Empty as 'Player' child and rename it 'WeaponPoint'.");
 
 
-                if (weaponPoint.childCount > 0)
-                    GameObject.Destroy(weaponPoint.GetChild(0).gameObject);
-                
+                //이거 이미 WeaponSwap에 있어서 불필요하다
+                if (weaponPoint.childCount > 0) //Destroy가 아니라 대상 총기를 SetActive를 false로 해야한다.
+                {
+                    //GameObject.Destroy(weaponPoint.GetChild(0).gameObject);
+                }
+
                 Weapon weapon = GameObject.Instantiate(weaponData.weaponPrefab, weaponPoint).AddComponent<Weapon>(); //이건 되는거 까진 좋은데,
                                                                                                                      //AddComponent<Weapon>이 안된다. 싱글로 하면 붙여진다
 

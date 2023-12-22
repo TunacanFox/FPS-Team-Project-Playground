@@ -62,8 +62,6 @@ namespace FPS.Lee.WeaponDetail
         void Start()
         {
             _photonView = GetComponent<PhotonView>();
-            //magText.text = mag.ToString(); //아래로 대체되었지만, 인지하라고 주석처리
-            //ammoText.text = ammo + "/" + magAmmo;
             magText = GameObject.Find("MagText").GetComponent<TextMeshProUGUI>();
             ammoText = GameObject.Find("AmmoText").GetComponent<TextMeshProUGUI>();
 
@@ -75,7 +73,6 @@ namespace FPS.Lee.WeaponDetail
             recoverLength = 1 / fireRate * recoverPercent;
         }
 
-        // Update is called once per frame
         void Update()
         {
             if (nextFire > 0)
