@@ -58,6 +58,17 @@ namespace FPS.Lee.WeaponDetail
 
         private PhotonView _photonView;
 
+        //테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 
+        [SerializeField] public Ray TEST_RAY;
+        public Vector3 End1;
+        public Vector3 End2;
+
+        GameObject weaponObjectTest;
+
+        GameObject playerObject;
+        Transform weaponPointTest;
+
+
         // Start is called before the first frame update
         void Start()
         {
@@ -66,15 +77,37 @@ namespace FPS.Lee.WeaponDetail
             ammoText = GameObject.Find("AmmoText").GetComponent<TextMeshProUGUI>();
 
 
-
             originalPosition = transform.localPosition;
 
             recoilLength = 0;
             recoverLength = 1 / fireRate * recoverPercent;
-        }
 
+
+            //테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트
+            weaponObjectTest = this.gameObject; //이 스크립트가 부착 되는 무기오브젝트. Ray쐈을 때 방향을 보기 위함.
+            
+            playerObject = GameObject.Find("Player"); //플레이어 프리팹
+            weaponPointTest = playerObject.transform.Find("WeaponPoint");
+
+
+
+            if (weaponPointTest == null || weaponObjectTest == null)
+                Debug.LogError("test || weaponObjectTest is null");
+
+            Debug.Log("test is not null");
+        }
+        
         void Update()
         {
+            //180도 돌려서 쏴야하니 -weaponPointTest.forward로 쏴야함
+            TEST_RAY = new Ray(weaponPointTest.position, -weaponPointTest.forward); //이거 Player -> WeaponPoint로 넣을거면 test, Weapon 프리팹 자체로 넣을거면 weaponObjectTest 넣는다.
+            
+            End1 = weaponPointTest.position + -transform.forward * 10f;
+            End2 = weaponObjectTest.transform.position + -transform.forward * 10f;
+
+            //Debug.DrawLine(TEST_RAY.origin, End1, Color.yellow);
+            Debug.DrawLine(TEST_RAY.origin, End2, Color.cyan);
+
             if (nextFire > 0)
                 nextFire -= Time.deltaTime;
 
@@ -164,9 +197,11 @@ namespace FPS.Lee.WeaponDetail
             //recovering = weaponData.recovering; //에러 떠서 주석처리
 
             //Animation에 재장전 애니메이션을 추가
+
+
         }
 
-    void Reload()
+        void Reload()
         {
             weaponAnimation.Play(reloadAnimation.name);
             if (mag > 0)
@@ -184,8 +219,9 @@ namespace FPS.Lee.WeaponDetail
             recoiling = true;
             recovering = false;
 
-            Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward); //오류: UnassignedReferenceException: The variable camera of Weapon has not been assigned.
-                                                                                            //You probably need to assign the camera variable of the Weapon script in the inspector.
+            //Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward); 
+            //오류: UnassignedReferenceException: The variable camera of Weapon has not been assigned.
+            //You probably need to assign the camera variable of the Weapon script in the inspector.
             //흠... 메인 카메라에서 나오면 안되잖아..? -> 생성된 플레이어 쫓아가게 생성되면 초기화
             //테스트로 메인 카메라에 넣긴 했는데 Bullethole인가 뭔가가 안나왔다.
             //Bullethole은 Lee의 EffectSpawner에서 담당한다.
@@ -196,20 +232,45 @@ namespace FPS.Lee.WeaponDetail
              */
             RaycastHit hit;
             int playermask = 1 << gameObject.layer;
+            
 
-            if (Physics.Raycast(ray.origin, ray.direction, out hit, 100f, playermask))
+            int enemy = LayerMask.GetMask("Enemy");
+
+            Debug.DrawLine(TEST_RAY.origin, End1, Color.yellow);
+            Debug.DrawLine(TEST_RAY.origin, End2, Color.red);
+
+
+
+            //if (Physics.Raycast(TEST_RAY, out hit, 100f, playermask))
+            if (Physics.Raycast(TEST_RAY, out hit, playermask))
             {
+                Debug.DrawLine(TEST_RAY.origin, End1, Color.red);
+
+
                 if (hit.transform.TryGetComponent(out Health health))
                 {
+                    Debug.Log("EnemyHealth Down");
                     health.TakeDamageClientRpc(damage);
                 }
             }
-            else if (Physics.Raycast(ray.origin, ray.direction, out hit, 100f, ~playermask))
+            else if (Physics.Raycast(TEST_RAY.origin, TEST_RAY.direction, out hit, 100f, ~playermask))
             {
+                Debug.DrawLine(TEST_RAY.origin, End2, Color.blue);
+
+
+                Debug.Log("Effect Blah Blah");
                 EffectSpawner.instance.SpawnBulletEffectClientRpc(hit.point, hit.normal);
+
             }
 
-            return;
+            else if (Physics.Raycast(TEST_RAY.origin, TEST_RAY.direction, out hit, enemy))
+            {
+                Debug.Log("Enemy!!!!!!!!!!!!!1");
+
+            }
+
+
+                return;
 
         }
 
