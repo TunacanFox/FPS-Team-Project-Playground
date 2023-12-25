@@ -3326,7 +3326,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1945195608}
   - component: {fileID: 1945195607}
-  m_Layer: 0
+  - component: {fileID: 1945195609}
+  m_Layer: 14
   m_Name: MemorizeWeaponNames
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3346,7 +3347,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponNames: []
-  thisObjectWeaponName: 
+  droppedItemSO: {fileID: 11400000, guid: b769ee3a88521cf48b0a1ee048354ff0, type: 2}
+  droppedWeapon: {fileID: 0}
+  temp_droppedWeapon: {fileID: 0}
+  droppedWeapon_WeaponSlot: 0
 --- !u!4 &1945195608
 Transform:
   m_ObjectHideFlags: 0
@@ -3356,12 +3360,33 @@ Transform:
   m_GameObject: {fileID: 1945195606}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1945195609
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945195606}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.04, y: 0.2, z: 0.8}
+  m_Center: {x: 0, y: -0.06, z: -0.06}
 --- !u!1 &1960156286
 GameObject:
   m_ObjectHideFlags: 0
@@ -6731,7 +6756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponNameList: []
-  testArray:
+  weaponSlotArray:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -6743,6 +6768,12 @@ MonoBehaviour:
   weaponPoint: {fileID: 0}
   currentVector: {x: 0, y: 0, z: 0}
   currentQuaternion: {x: 0, y: 0, z: 0, w: 0}
+  droppedWeapon: {fileID: 0}
+  weaponPickup: {fileID: 0}
+  droppedWeapon_weaponSlot: 0
+  dropedWeaponLayer:
+    serializedVersion: 2
+    m_Bits: 16384
 --- !u!4 &9025814369122557364
 Transform:
   m_ObjectHideFlags: 0

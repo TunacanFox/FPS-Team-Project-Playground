@@ -12,21 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ecbe7d7e2ca1c49802ac65c31d5754, type: 3}
   m_Name: (SR) M107, No Scope
   m_EditorClassIdentifier: 
+  id: 0
   weaponSlot: 0
   weaponName: (SR) M107, No Scope
   weaponNameFinder: M107, No Scope
   damage: 99
   fireRate: 1
   range: 1800
-  ammo: 0
-  fullMagazine: 0
-  magazineNum: 0
+  ammo: 8
+  fullMagazine: 8
+  magazineNum: 3
   weaponPrefab: {fileID: 1829597508155286, guid: 7359baf27e84aa44cafac3788c8be0f1,
     type: 3}
   hitVFX: {fileID: 0}
-  removeFireHole: 0
+  removeFireHole: 1
   reloadAnimation: {fileID: 0}
-  recoverPercent: 0
-  recoilUp: 0
-  recoilBack: 0
+  recoverPercent: 0.7
+  recoilUp: 0.08
+  recoilBack: 0.08
   recovering: 0

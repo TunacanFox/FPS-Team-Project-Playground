@@ -11,6 +11,9 @@ namespace FPS.Lee.WeaponDetail
 {
     public class Weapon : MonoBehaviour
     {
+        //총기 분류
+        public WeaponSlot weaponSlot;
+
         public int damage;
         public float fireRate;
 
@@ -60,8 +63,8 @@ namespace FPS.Lee.WeaponDetail
 
         //테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 
         [SerializeField] public Ray TEST_RAY;
-        public Vector3 End1;
-        public Vector3 End2;
+        public Vector3 rayTest_End1;
+        public Vector3 rayTest_End2;
 
         GameObject weaponObjectTest;
 
@@ -102,11 +105,11 @@ namespace FPS.Lee.WeaponDetail
             //180도 돌려서 쏴야하니 -weaponPointTest.forward로 쏴야함
             TEST_RAY = new Ray(weaponPointTest.position, -weaponPointTest.forward); //이거 Player -> WeaponPoint로 넣을거면 test, Weapon 프리팹 자체로 넣을거면 weaponObjectTest 넣는다.
             
-            End1 = weaponPointTest.position + -transform.forward * 10f;
-            End2 = weaponObjectTest.transform.position + -transform.forward * 10f;
+            rayTest_End1 = weaponPointTest.position + -transform.forward * 10f;
+            rayTest_End2 = weaponObjectTest.transform.position + -transform.forward * 10f;
 
             //Debug.DrawLine(TEST_RAY.origin, End1, Color.yellow);
-            Debug.DrawLine(TEST_RAY.origin, End2, Color.cyan);
+            Debug.DrawLine(TEST_RAY.origin, rayTest_End2, Color.cyan);
 
             if (nextFire > 0)
                 nextFire -= Time.deltaTime;
@@ -139,6 +142,9 @@ namespace FPS.Lee.WeaponDetail
 
         public void WeaponUISetup(WeaponDataSO weaponData)
         {
+            //총기 분류
+            weaponSlot = weaponData.weaponSlot; //무기 분류 타입. 주무기인지 보조무기인지 등등 구분하기 위함
+
             //Elementry Variable
             damage = weaponData.damage; //뎀
             fireRate = weaponData.fireRate; //발사 주기
@@ -236,15 +242,15 @@ namespace FPS.Lee.WeaponDetail
 
             int enemy = LayerMask.GetMask("Enemy");
 
-            Debug.DrawLine(TEST_RAY.origin, End1, Color.yellow);
-            Debug.DrawLine(TEST_RAY.origin, End2, Color.red);
+            Debug.DrawLine(TEST_RAY.origin, rayTest_End1, Color.yellow);
+            Debug.DrawLine(TEST_RAY.origin, rayTest_End2, Color.red);
 
 
 
             //if (Physics.Raycast(TEST_RAY, out hit, 100f, playermask))
             if (Physics.Raycast(TEST_RAY, out hit, playermask))
             {
-                Debug.DrawLine(TEST_RAY.origin, End1, Color.red);
+                Debug.DrawLine(TEST_RAY.origin, rayTest_End1, Color.red);
 
 
                 if (hit.transform.TryGetComponent(out Health health))
@@ -255,7 +261,7 @@ namespace FPS.Lee.WeaponDetail
             }
             else if (Physics.Raycast(TEST_RAY.origin, TEST_RAY.direction, out hit, 100f, ~playermask))
             {
-                Debug.DrawLine(TEST_RAY.origin, End2, Color.blue);
+                Debug.DrawLine(TEST_RAY.origin, rayTest_End2, Color.blue);
 
 
                 Debug.Log("Effect Blah Blah");
